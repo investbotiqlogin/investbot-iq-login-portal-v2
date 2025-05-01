@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
@@ -23,95 +22,84 @@ const userRolesData = [
   { name: 'Affiliated', value: 5 },
 ];
 
-const COLORS = ['#7E69AB', '#4F46E5', '#9b87f5', '#6E59A5', '#1A1F2C', '#D6BCFA'];
+const COLORS = ['#a786ff', '#cbb9f7', '#ede7fa', '#7E69AB', '#4F46E5', '#D6BCFA'];
 
 const AdminDashboard = () => {
   return (
-    <div className="space-y-6">
-      <h1 className="text-3xl font-bold">Admin Dashboard</h1>
+    <div className="space-y-8">
+      {/* Accentlijn bovenaan */}
+      <div className="h-2 w-full bg-gradient-to-r from-[#ede7fa] via-[#a786ff] to-[#cbb9f7] rounded-t-xl mb-2" />
+      <h1 className="text-4xl font-extrabold text-investbot-purple mb-2">Admin Dashboard</h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <Card className="rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-200 border-0 bg-white/90">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
-              Actieve Gebruikers
-            </CardTitle>
+            <CardTitle className="text-sm font-semibold text-investbot-purple">Actieve Gebruikers</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">120</div>
-            <p className="text-xs text-green-500 flex items-center mt-1">
+            <div className="text-3xl font-extrabold text-gray-900" data-component-name="AdminDashboard">50 / 200</div>
+            <p className="text-xs text-green-500 flex items-center mt-1 font-medium">
               +15 deze maand
             </p>
           </CardContent>
         </Card>
-        
-        <Card>
+        <Card className="rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-200 border-0 bg-white/90">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
-              Totale Cashflow
-            </CardTitle>
+            <CardTitle className="text-sm font-semibold text-investbot-purple">Totale Cashflow</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">€186.420</div>
-            <p className="text-xs text-green-500 flex items-center mt-1">
+            <div className="text-3xl font-extrabold text-gray-900">€0,-</div>
+            <p className="text-xs text-green-500 flex items-center mt-1 font-medium">
               +12% t.o.v. vorige maand
             </p>
           </CardContent>
         </Card>
-        
-        <Card>
+        <Card className="rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-200 border-0 bg-white/90">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
-              Nieuwe Registraties
-            </CardTitle>
+            <CardTitle className="text-sm font-semibold text-investbot-purple">Nieuwe Registraties</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">28</div>
-            <p className="text-xs text-green-500 flex items-center mt-1">
+            <div className="text-3xl font-extrabold text-gray-900">28</div>
+            <p className="text-xs text-green-500 flex items-center mt-1 font-medium">
               +8 sinds vorige week
             </p>
           </CardContent>
         </Card>
-        
-        <Card>
+        <Card className="rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-200 border-0 bg-white/90">
           <CardHeader className="pb-2">
-            <CardTitle className="text-sm font-medium text-muted-foreground">
-              Waarschuwingen
-            </CardTitle>
+            <CardTitle className="text-sm font-semibold text-investbot-purple">Notificaties</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold">3</div>
-            <p className="text-xs text-amber-500 flex items-center mt-1">
+            <div className="text-3xl font-extrabold text-gray-900">3</div>
+            <p className="text-xs text-amber-500 flex items-center mt-1 font-medium">
               Actie vereist
             </p>
           </CardContent>
         </Card>
       </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card className="col-span-1">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <Card className="col-span-1 rounded-2xl shadow-lg border-0 bg-gradient-to-br from-[#ede7fa] via-[#fff] to-[#cbb9f7]">
           <CardHeader>
-            <CardTitle>Gebruikersactiviteit</CardTitle>
-            <CardDescription>Actieve gebruikers en nieuwe registraties per dag</CardDescription>
+            <CardTitle className="text-investbot-purple font-bold">Gebruikersactiviteit</CardTitle>
+            <CardDescription className="text-gray-600">Actieve gebruikers en nieuwe registraties per dag</CardDescription>
           </CardHeader>
           <CardContent className="h-80">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={userActivityData}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                <XAxis dataKey="name" />
-                <YAxis />
+                <CartesianGrid strokeDasharray="3 3" stroke="#ede7fa" />
+                <XAxis dataKey="name" tick={{ fill: '#a786ff', fontWeight: 600 }} />
+                <YAxis tick={{ fill: '#a786ff', fontWeight: 600 }} />
                 <Tooltip />
-                <Bar dataKey="active" name="Actieve gebruikers" fill="#7E69AB" />
-                <Bar dataKey="new" name="Nieuwe registraties" fill="#4F46E5" />
+                <Bar dataKey="active" name="Actieve gebruikers" fill="#a786ff" radius={[8, 8, 0, 0]} />
+                <Bar dataKey="new" name="Nieuwe registraties" fill="#cbb9f7" radius={[8, 8, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </CardContent>
         </Card>
-        
-        <Card className="col-span-1">
+        <Card className="col-span-1 rounded-2xl shadow-lg border-0 bg-gradient-to-br from-[#ede7fa] via-[#fff] to-[#cbb9f7]">
           <CardHeader>
-            <CardTitle>Gebruikersrollen</CardTitle>
-            <CardDescription>Verdeling van gebruikers per rol</CardDescription>
+            <CardTitle className="text-investbot-purple font-bold">Gebruikersrollen</CardTitle>
+            <CardDescription className="text-gray-600">Verdeling van gebruikers per rol</CardDescription>
           </CardHeader>
           <CardContent className="h-80">
             <ResponsiveContainer width="100%" height="100%">
@@ -122,7 +110,7 @@ const AdminDashboard = () => {
                   cy="50%"
                   labelLine={false}
                   outerRadius={100}
-                  fill="#8884d8"
+                  fill="#a786ff"
                   dataKey="value"
                   label={({ name, percent }) => `${name}: ${(percent * 100).toFixed(0)}%`}
                 >

@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import NavBar from '../components/NavBar';
+// import NavBar from '../components/NavBar'; // Verwijderd NavBar import
 import OrbBackground from '../components/OrbBackground';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -52,8 +51,7 @@ const Login = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <OrbBackground className="opacity-50" />
-      <NavBar />
-      
+      {/* <NavBar /> verwijderd zodat er geen header is op de login pagina */}
       <main className="flex-1 flex items-center justify-center p-6 relative z-10">
         <Card className="w-full max-w-md mx-auto">
           <CardHeader>
@@ -62,7 +60,6 @@ const Login = () => {
               Kies uw rol en log in met uw gegevens
             </CardDescription>
           </CardHeader>
-          
           <CardContent>
             <form onSubmit={handleLogin} className="space-y-6">
               <div className="space-y-2">
@@ -85,7 +82,6 @@ const Login = () => {
                   </SelectContent>
                 </Select>
               </div>
-              
               <div className="space-y-2">
                 <Label htmlFor="email">E-mailadres</Label>
                 <Input
@@ -97,7 +93,6 @@ const Login = () => {
                   required
                 />
               </div>
-              
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password">Wachtwoord</Label>
@@ -113,7 +108,6 @@ const Login = () => {
                   required
                 />
               </div>
-              
               <Button
                 type="submit"
                 className="w-full bg-investbot-purple hover:bg-investbot-darkPurple"
@@ -123,7 +117,6 @@ const Login = () => {
               </Button>
             </form>
           </CardContent>
-          
           <CardFooter className="flex flex-col space-y-2 text-center text-sm text-muted-foreground">
             <p>
               Geen account? Registratie verloopt via administrator.

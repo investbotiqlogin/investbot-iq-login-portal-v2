@@ -1,9 +1,7 @@
-
 import React from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
-import DashboardSidebar from '@/components/DashboardSidebar';
-import DashboardHeader from '@/components/DashboardHeader';
 import { useAuth } from '@/contexts/AuthContext';
+import NavBar from '../components/NavBar';
 import type { UserRole } from '@/contexts/AuthContext';
 
 interface DashboardLayoutProps {
@@ -42,14 +40,8 @@ const DashboardLayout = ({ role }: DashboardLayoutProps) => {
 
   return (
     <div className="flex h-screen bg-background">
-      <DashboardSidebar role={role} />
-      
+      <NavBar />
       <div className="flex-1 flex flex-col overflow-hidden">
-        <DashboardHeader 
-          userName={user?.user_metadata?.name || "Gebruiker"} 
-          role={role} 
-        />
-        
         <main className="flex-1 overflow-auto p-6">
           <Outlet />
         </main>

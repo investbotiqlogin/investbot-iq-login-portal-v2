@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -22,6 +21,9 @@ import AdminAIRunning from "./pages/admin/AIRunning";
 import AdminProfile from "./pages/admin/Profile";
 import AdminProgress from "./pages/admin/Progress";
 import AdminReferrals from "./pages/admin/Referrals";
+import AdminRegistrations from "./pages/admin/Registrations";
+import AdminUsers from "./pages/admin/Users";
+import AdminNotifications from "./pages/admin/Notifications";
 
 const queryClient = new QueryClient();
 
@@ -70,8 +72,10 @@ const App = () => (
               <Route path="profile" element={<AdminProfile />} />
               <Route path="progress" element={<AdminProgress />} />
               <Route path="referrals" element={<AdminReferrals />} />
-              <Route path="users" element={<div className="p-4">Gebruikers pagina (nog te implementeren)</div>} />
-              <Route path="tasks" element={<div className="p-4">Taken pagina (nog te implementeren)</div>} />
+              <Route path="users" element={<AdminUsers />} />
+              <Route path="tasks" element={<AdminTasks />} />
+              <Route path="registrations" element={<AdminRegistrations />} />
+              <Route path="notifications" element={<AdminNotifications />} />
               <Route path="leads" element={<div className="p-4">Leads pagina (nog te implementeren)</div>} />
               <Route path="settings" element={<div className="p-4">Instellingen pagina (nog te implementeren)</div>} />
             </Route>
