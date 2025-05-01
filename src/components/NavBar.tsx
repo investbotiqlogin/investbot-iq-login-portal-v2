@@ -7,7 +7,7 @@ const NavBar = () => {
   return (
     <nav className="w-full py-4 px-6 flex justify-between items-center bg-background/80 backdrop-blur-md z-10">
       <Link to="/">
-        <Logo />
+        <img src="/investbot-logo.png" alt="InvestbotIQ Logo" width={48} height={48} style={{ display: 'inline-block' }} />
       </Link>
       
       <Link

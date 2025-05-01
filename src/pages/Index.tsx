@@ -28,11 +28,7 @@ const Index = () => {
               </Link>
             </Button>
             
-            <Button asChild variant="outline" size="lg" className="border-investbot-purple text-investbot-purple hover:bg-investbot-light">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                Bekijk hoe het werkt
-              </a>
-            </Button>
+
           </div>
         </div>
       </main>

@@ -11,7 +11,17 @@ import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import DashboardLayout from "./layouts/DashboardLayout";
 import MemberDashboard from "./pages/member/Dashboard";
+import MemberTasks from "./pages/member/Tasks";
+import MemberAIRunning from "./pages/member/AIRunning";
+import MemberProfile from "./pages/member/Profile";
+import MemberProgress from "./pages/member/Progress";
+import MemberReferrals from "./pages/member/Referrals";
 import AdminDashboard from "./pages/admin/Dashboard";
+import AdminTasks from "./pages/admin/Tasks";
+import AdminAIRunning from "./pages/admin/AIRunning";
+import AdminProfile from "./pages/admin/Profile";
+import AdminProgress from "./pages/admin/Progress";
+import AdminReferrals from "./pages/admin/Referrals";
 
 const queryClient = new QueryClient();
 
@@ -38,11 +48,11 @@ const App = () => (
             >
               <Route index element={<Navigate to="/member/dashboard" replace />} />
               <Route path="dashboard" element={<MemberDashboard />} />
-              <Route path="tasks" element={<div className="p-4">Taken pagina (nog te implementeren)</div>} />
-              <Route path="profile" element={<div className="p-4">Profiel pagina (nog te implementeren)</div>} />
-              <Route path="progress" element={<div className="p-4">Voortgang pagina (nog te implementeren)</div>} />
-              <Route path="ai-running" element={<div className="p-4">AI Processen (nog te implementeren)</div>} />
-              <Route path="referrals" element={<div className="p-4">Referrals pagina (nog te implementeren)</div>} />
+              <Route path="tasks" element={<MemberTasks />} />
+              <Route path="ai-running" element={<MemberAIRunning />} />
+              <Route path="profile" element={<MemberProfile />} />
+              <Route path="progress" element={<MemberProgress />} />
+              <Route path="referrals" element={<MemberReferrals />} />
             </Route>
 
             {/* Admin routes */}
@@ -56,6 +66,10 @@ const App = () => (
             >
               <Route index element={<Navigate to="/admin/dashboard" replace />} />
               <Route path="dashboard" element={<AdminDashboard />} />
+              <Route path="ai-running" element={<AdminAIRunning />} />
+              <Route path="profile" element={<AdminProfile />} />
+              <Route path="progress" element={<AdminProgress />} />
+              <Route path="referrals" element={<AdminReferrals />} />
               <Route path="users" element={<div className="p-4">Gebruikers pagina (nog te implementeren)</div>} />
               <Route path="tasks" element={<div className="p-4">Taken pagina (nog te implementeren)</div>} />
               <Route path="leads" element={<div className="p-4">Leads pagina (nog te implementeren)</div>} />
